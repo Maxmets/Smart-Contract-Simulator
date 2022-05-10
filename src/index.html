@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>CPS831 - BlockChain Calculator</title>    
+<link rel="stylesheet" href="index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3@1.3.3/dist/web3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@truffle/contract@4.3.5/dist/truffle-contract.js"></script>
+<!-- <script src="src\truffle-contract.js"></script> -->
+<script src="app.js"></script>
+<script src="web3.min.js"></script>
+</head>
+    
+<body>
+<div class="app">
+    <h1 style="color: white; font-family:Arial, Helvetica, sans-serif">Blockchain Calculator</h1>
+    <div class="calcBackground">
+        <textarea id="display" class="display" rows="4" cols="30" disabled=true>0</textarea>
+        <table>
+            <tr>
+                <td>
+                    <button onclick="reset()" class="resetButton" value="C">C</button> 
+                </td>
+                <td>
+                    <button id="absoV" onclick="buttonPress(value)" value="abs">|x|</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value="%">%</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value="÷" class="operators">÷</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="buttonPress(value)" value="7">7</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value="8">8</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value="9">9</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value="x" class="operators">x</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="buttonPress(value)" value="4">4</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value="5">5</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value="6">6</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value="-" class="operators">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="buttonPress(value)" value="1">1</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value="2">2</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value="3">3</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value="+" class="operators">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="buttonPress(value)" value="0">0</button>
+                </td>
+                <td>
+                    <button onclick="buttonPress(value)" value=".">.</button>
+                </td>
+                <td colspan="2">
+                    <button onclick="buttonPress(value)" value="=" class="equalsOperator">=</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+        
+    <div>
+        <div id="prevCalcsDiv">
+        <h3>Previous Calculations:</h3>
+        <p id="prevCalcs"></p>
+        </div>
+    </div>
+</div>
+</body>
+
+
+</html>
